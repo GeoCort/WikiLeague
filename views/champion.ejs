@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/stylesheets/output.css">
+    <title>Document</title>
+</head>
+<body class="min-h-screen bg-zinc-700">
+    <%- include('./navbar') %>
+    <main class=" grid grid-cols-12 text-zinc-50 p-10 ">
+        <section class="col-span-10 col-start-2 grid grid-cols-6 ">
+            <div class="col-span-1">
+                <img src=<%='https://ddragon.leagueoflegends.com/cdn/15.3.1/img/champion/'+ champion[title].image.full %>  />
+            </div>
+            <article class="col-span-4 border-r-2 p-10">
+                <h1 class="text-yellow-300 text-3xl font-bold py-1"><%=title%></h1>
+                <h2 class="text-yellow-50 text-xl font-semibold italic pb-2 "><%=champion[title].title%></h2>
+                <p><%=champion[title].lore%></p>
+            </article>
+            <article class="text-center col-span-1">
+               <p> <%= champion[title].blurb %> </p>
+            </article>
+        </section>
+        <section class="col-span-10 col-start-2">
+            <h2>Skills</h2>
+            <div class="flex flex-col gap-2 border-2">
+                <% champion[title].spells.map( m=>{ %>
+                    <article class="flex border-2 ">
+                        <img src=<%='https://ddragon.leagueoflegends.com/cdn/15.3.1/img/spell/' +m.image.full %>>
+                        <%= m.description %>
+                    </article>
+                    <% })%>
+            </div>
+        </section>
+    </main>
+    <%- include('./footer') %>
+</body>
+</html>

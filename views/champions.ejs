@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/stylesheets/output.css">
+    <title><%=title%>></title>
+</head>
+<body class="bg-zinc-700 text-white">
+    <%- include('navbar')%>
+    <main class="grid grid-cols-12 grid-rows-1 p-10 ">
+        <section class="col-start-2 col-end-12 grid grid-cols-6 grid-rows-1 gap-2 gap-y-10 text-center">
+            <% for( c in champions){%>
+                <article class="hover:scale-125 transition-all duration-300 col-span-1 flex flex-col justify-center items-center">
+                    <a href=<%='/champions/'+ champions[c].id %>>
+                        <img src=<%='https://ddragon.leagueoflegends.com/cdn/15.3.1/img/champion/'+ champions[c].image.full%> />
+                <p class="text-center text-yellow-500"><%= c %></p>
+                    </a>
+                </article>
+                <% } %>
+        </section>
+    </main>
+    <%- include('./footer') %>
+</body>
+</html>
