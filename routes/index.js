@@ -31,4 +31,20 @@ router.get('/champions/:id', async (req,res,next)=>{
     champion:champion.data
   })
 })
+
+router.get('/items', async (req,res)=>{
+  const response = await fetch('https://ddragon.leagueoflegends.com/cdn/15.3.1/data/en_US/item.json', {
+    headers:{
+      'Authorization': process.env.RIOT_API_KEY
+    }
+  })
+  const items = await response.json()
+  console.log(items.data)
+  res.render('items', {
+    title:"Fix this Route"
+  })
+})
+router.get('/about', (req,res)=>{
+  res.render('about', {title:"about"})
+})
 module.exports = router;
