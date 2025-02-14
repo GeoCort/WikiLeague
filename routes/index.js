@@ -17,6 +17,28 @@ router.get('/champions', async (req,res,next)=>{
     champions:champ.data
   })
 })
+router.get('/champions/random', async (req,res)=>{
+  let randomNumber = Math.floor(Math.random() * 170);
+let data = await fetch('https://ddragon.leagueoflegends.com/cdn/15.3.1/data/en_US/champion.json',{
+  headers:{
+    'Authorization': process.env.RIOT_API_KEY
+  }
+  
+})
+let champions = await data.json()
+try{
+  for(c in champions.data){
+    if(randomNumber == 0 ){
+      console.log(c)
+      res.redirect(`/champions/${c}`)
+    }else{
+      randomNumber--
+    }
+  }}catch(e){
+    res.render('error', {title:"Error In Finding Champion"})
+
+  }
+})
 router.get('/champions/:id', async (req,res,next)=>{
   const champ = req.params.id
   let response = await fetch('https://ddragon.leagueoflegends.com/cdn/15.3.1/data/en_US/champion/'+champ+'.json',{

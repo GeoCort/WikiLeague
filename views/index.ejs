@@ -7,16 +7,27 @@
   <body>
        <%- include('./navbar') %>
        <main class="bg-zinc-700">
-        <section class="object-center  bg-no-repeat relative">
-          <h1 class="absolute top-0 left-0 text-white">Welcome to the League Wiki, Summoner</h1>
+        <section class="object-center  bg-no-repeat relative shadow-lg">
+          <h1 class="absolute top-10 left-10 text-white text-6xl font-bold bg-zinc-900/75 rounded-lg p-5">Welcome to the League Wiki,<br/>Summoner</h1>
           <img class=" w-full" src="/images/LoL_012714_1600.jpg.webp"/>
         </section>
-        <section class="min-h-96">
-          <h2>Learn About Every League Champion </h2>
-          <article>
-            <h3>Learn about Each characters Skills and Abilities</h3>
+       <div>
+        <h2 class=" text-4xl text-slate-50 p-5 py-10 font-bold text-center ">Explore Everything League of Legends Related </h2>
+        <section class="min-h-[70vh] grid grid-cols-8 bg-zinc-700 p-10 text-slate-50 grid-rows-[50px,1fr] gap-10  ">
+          <article class=" rounded-lg container bg-[url('/images/zfRPmLIapvU5BacM-generated_image.jpg')] col-span-2 col-start-2 flex flex-col justify-between bg-center bg-cover bg-gray-800 min-h-72  text-xl font-semibold text-center shadow-lg">
+            <h3 class="bg-zinc-800 rounded-t-lg p-3 min-h-20">Learn About Your Favorite Champions</h3>
+            <a href="/champions" class="rounded-b-lg bg-zinc-800 w-full text-right text-md pr-5 italic underline block p-2 rounded-t-md">See All Champions</a>
+          </article>
+          <article class=" rounded-lg container bg-[url('/images/ZDYVQfZOWKumt7tU-generated_image.jpg')] col-span-2 col-start-4 flex flex-col justify-between bg-cover bg-no-repeat bg-center bg-gray-800 min-h-72  text-xl font-semibold text-center shadow-lg">
+            <h3 class="bg-zinc-800 rounded-t-lg p-3 min-h-20">Learn About Items and Builds</h3>
+            <a href="/items" class="rounded-b-lg bg-zinc-800 w-full text-right text-md pr-5 italic underline block p-2 rounded-t-md">View Items</a>
+          </article>
+          <article class=" rounded-lg container bg-no-repeat bg-top bg-[url('/images/FY4tqz0hOmqIFDyz-generated_image.jpg')] col-span-2 col-start-6 flex flex-col justify-between bg-gray-800 min-h-72  text-xl font-semibold text-center shadow-lg">
+            <h3 class="bg-zinc-800 rounded-t-lg p-3 min-h-20">Explore a Random Character</h3>
+            <a href="/champions/random" class="rounded-b-lg bg-zinc-800 w-full text-right text-md pr-5 italic underline block p-2 rounded-t-md">Explore</a>
           </article>
         </section>
+       </div>
        </main>
        <%- include('./footer') %>
   </body>

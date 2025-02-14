@@ -11,23 +11,23 @@
     <main class=" grid grid-cols-12 text-zinc-50 p-10 ">
         <section class="col-span-10 col-start-2 grid grid-cols-6 ">
             <div class="col-span-1">
-                <img src=<%='https://ddragon.leagueoflegends.com/cdn/img/champion/loading/'+ title + "_0.jpg" %>  />
+                <img class="rounded-md" src=<%='https://ddragon.leagueoflegends.com/cdn/img/champion/loading/'+ title + "_0.jpg" %>  />
             </div>
-            <article class="col-span-4 border-r-2 p-10">
+            <article class="col-span-4 bg-zinc-900 mx-5 rounded-lg p-10">
                 <h1 class="text-yellow-300 text-3xl font-bold py-1"><%=title%></h1>
                 <h2 class="text-yellow-50 text-xl font-semibold italic pb-2 "><%=champion[title].title%></h2>
                 <p><%=champion[title].lore%></p>
             </article>
-            <article class="text-center col-span-1">
+            <article class="text-center col-span-1 bg-zinc-900 rounded-lg p-5 text-md">
                <p> <%= champion[title].blurb %> </p>
             </article>
         </section>
-        <section class="col-span-10 col-start-2">
-            <h2>Skills</h2>
-            <div class="flex flex-col gap-2 border-2">
+        <section class="col-span-10 col-start-2 mt-5">
+            <div class="flex flex-col gap-4 bg-zinc-900 p-10 rounded-lg shadow-2xl ">
+                <h2 class="text-center font-semibold text-3xl py-5">Skills</h2>
                 <% champion[title].spells.map( m=>{ %>
-                    <article class="flex border-2 ">
-                        <img src=<%='https://ddragon.leagueoflegends.com/cdn/15.3.1/img/spell/' +m.image.full %>>
+                    <article class="flex  ">
+                        <img class="rounded-lg mr-5" src=<%='https://ddragon.leagueoflegends.com/cdn/15.3.1/img/spell/' +m.image.full %>>
                         <%= m.description %>
                     </article>
                     <% })%>
